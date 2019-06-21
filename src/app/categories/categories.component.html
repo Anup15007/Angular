@@ -1,0 +1,23 @@
+
+<h2>Book Categories</h2>
+<ul class="categories">
+  <li *ngFor="let category of categories">
+    <a routerLink="/category/{{category.categoryId}}">
+      <span class="badge">{{category.categoryId}} </span>{{category.categoryName}}
+    </a>
+    <button class="delete" title="delete category"
+            (click)="delete(category)">x</button>
+  </li>
+</ul>
+
+<div class="card-body">
+  <form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
+    <div class="form-group">
+      <label for="categoryName">Name</label>
+      <input type="text" [(ngModel)]="category.categoryName"
+             class="form-control" id="categoryName" name="categoryName" placeholder="Enter your categoryName"
+             required #name="ngModel">
+    </div>
+    <button type="submit" [disabled]="!categoryForm.form.valid" class="btn btn-info">Submit</button>
+  </form>
+</div>

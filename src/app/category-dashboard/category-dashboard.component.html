@@ -1,0 +1,8 @@
+<h2>Top Categories</h2>
+<div class="gird grid-pad">
+  <a *ngFor="let category of categories"  class="col-1-4" routerLink="/category/{{category.categoryId}}" >
+    <div class="module category">
+      <h4>{{category.categoryName}}</h4>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="category">
+  <h2>{{category.categoryName | uppercase}} Details</h2>
+  <div>
+    <div>Id: <span>{{category.categoryId}}</span></div>
+    <label>name:
+      <input [(ngModel)]="category.categoryName" placeholder="categoryName"/>
+    </label>
+  </div>
+  <button (click)="save()">save</button>
+  <button (click)="goBack()">go back</button>
+</div>
